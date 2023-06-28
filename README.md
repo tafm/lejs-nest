@@ -91,10 +91,12 @@ export classAppService {
 			},
 			customEvents: {
 				certificate(report: CertificateReport) {
+					const myCustomObject = {
+						myCustomObjectId:  `req-${report.requestId}`
+					}
+
 					return {
-						data: {
-							myOwnResponseObjectId:  report.requestId,
-						},
+						data: myCustomObject,
 						event:  'mycustom.event',
 					};
 				},
