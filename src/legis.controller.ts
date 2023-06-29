@@ -18,9 +18,7 @@ export const createDynamicController = (controllerOptions: {
 }) => {
   @Controller(controllerOptions.basePath)
   class LegisController {
-    constructor(@Inject("EventEmitter2") public eventEmitter: EventEmitter2) {
-      console.log(eventEmitter);
-    }
+    constructor(@Inject("EventEmitter2") public eventEmitter: EventEmitter2) {}
 
     @Post(controllerOptions.certificatesCallbackPath)
     handleLegisCertificateCallback(@Body() body: CertificatesWebhookResponse) {
